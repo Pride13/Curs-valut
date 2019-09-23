@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+        .then(value => value.json())
+        .then(jsonedValue => {
+            jsonedValue.forEach(kurs => {
+                document.write(`${kurs.ccy} to ${kurs.base_ccy} is: BUY ${kurs.buy} - SALE ${kurs.sale} <p>`)
+            })
+        })
+
+</script>
+</body>
+</html>
